@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Controle Prateleiras I.A.</title>
+</head>
+<title> CONTROLE ABASTECIMENTO DE PRATELEIRAS </title>
+<body style=background-color:gray> <! --DEFINE A COR DE FUNDO DA PÁGINA-->
+<center><font color='blue'><h1>PRATELEIRAS</font></center></h1> <! --ESCREVE "PRATELEIRAS" EM COR AZUL NA PÁGINA-->
+<center><font color='blue'><h1>CONTROLE ESTOQUE - COMERCIO</font></center></h1> <! --ESCREVE "CONTROLE ESTOQUE - COMERCIO" EM COR AZUL NA PÁGINA-->
+<body>
+
+<div id='wrapper'><center><img src='https://upload.wikimedia.org/wikipedia/commons/8/83/UNIP_-_Universidade_Paulista.png'alt=”some text” width=250 height=100></center><br/>
+
+<center><h2><VAR>VERIFICAÇÃO I.A. (IMAGENS)</VAR></h2></center>
+<p></p>
+<br>
+<center><p id="demo">Carregando...</p></center>
+
+<script>
+var data = 'modelId=df8909ed-2ffc-4350-8939-f186b81b5763&urls=https://www.ibahia.com/fileadmin/user_upload/ibahia/2019/outubro/25/banana.jpg?width=1200&enable=upscale';
+
+var xhr = new XMLHttpRequest();
+
+xhr.addEventListener("readystatechange", function () {
+
+  if (this.readyState === this.DONE) {
+
+    document.getElementById('demo').innerHTML = (this.responseText);
+
+  }
+
+});
+
+xhr.open("POST", "https://app.nanonets.com/api/v2/ImageCategorization/LabelUrls/");
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+xhr.setRequestHeader("authorization", "Basic " + btoa("gI34_BHfkNwdFnUAFIwgr4l9nB-TSXsC:"));
+xhr.send(data);
+
+</script>
+
+<center><a href='https://dataplatform.cloud.ibm.com/studio/watson-vision-combined/novoprojetoprateleiras_2030245810/view?project_id=eed4c160-6a7d-419b-8215-294dd08967b2&training_definition_id=7823069b-1f1e-4087-a955-e5631f39f222'>IBM-CLOAD-WATSON I.A.</a></center>
+
+<hr/>   
+
+</body>
+</html>
